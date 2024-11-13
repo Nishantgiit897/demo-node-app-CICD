@@ -11,7 +11,7 @@ pipeline{
         stage("Code Build & Test"){
             steps{
                 echo "Code Build Stage"
-                echo "This change is from SCM"
+               sh 'echo "This change is from SCM"'
                 sh "docker build -t node-app ."
             }
         }
