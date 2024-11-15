@@ -29,6 +29,7 @@ pipeline{
         }
         stage("Deploy"){
             steps{
+                sh "docker kill $(docker ps -q)"
                 sh "docker compose down && docker compose up -d --build"
             }
         }
